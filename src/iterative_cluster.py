@@ -1,4 +1,8 @@
 import os
+os.environ['OPENAI_API_KEY'] = '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'
+os.environ['OPENAI_ORG'] = 'org-d9Qs493ZiXczq8b0B7gCoVPA'
+print("API Key:", os.environ.get('OPENAI_API_KEY'))
+print("Organization:", os.environ.get('OPENAI_ORG'))
 import json
 import time
 import datetime
@@ -28,7 +32,6 @@ from utils import (
 )
 
 from experiment_recorder import ExperimentRecorder
-
 
 def estimate_cost_for_clustering(
     problem: Problem,

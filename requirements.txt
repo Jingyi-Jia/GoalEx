@@ -1,5 +1,5 @@
 transformers>=4.26.1
-openai>=0.27.1
+openai==0.28
 pulp
 dataclasses
 dataclasses_json

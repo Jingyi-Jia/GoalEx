@@ -241,10 +241,11 @@ def propose_descriptions_multi_round(
             )
         # for the rest of the rounds, we use a random subset of 2 descriptions (or the length of the example_descriptions) from the 1st round as example_descriptions
         else:
-            example_descriptions = random.sample(
-                proposer_responses[0].descriptions,
-                len(example_descriptions) if len(example_descriptions) != 0 else 2,
-            )
+            # example_descriptions = random.sample(
+            #     proposer_responses[0].descriptions, 2 
+            #     # len(example_descriptions) if len(example_descriptions) != 0 else 2,
+            # )
+            example_descriptions = proposer_responses[0].descriptions
             proposer_response = propose_descriptions(
                 problem=problem,
                 num_samples=num_samples,

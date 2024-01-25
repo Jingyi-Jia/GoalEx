@@ -89,7 +89,9 @@ def estimate_querying_cost(
         cost_per_prompt_token = 0.02 / 1000
         cost_per_completion_token = 0.02 / 1000
     else:
-        raise ValueError(f"Unknown model: {model}")
+        # raise ValueError(f"Unknown model: {model}")
+        cost_per_prompt_token = 0.002 / 1000
+        cost_per_completion_token = 0.002 / 1000
 
     cost = (
         num_prompt_toks * cost_per_prompt_token
@@ -308,7 +310,8 @@ def get_context_length(model: str) -> int:
     elif model == "gpt-3.5-turbo":
         return 4096
     else:
-        raise ValueError(f"Unknown model {model}")
+        # raise ValueError(f"Unknown model {model}")
+        return 32000
 
 
 def get_length_in_gpt2_tokens(text: str) -> int:
